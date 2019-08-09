@@ -301,7 +301,8 @@ public class LambdaExercises {
         "level", "of", "indirection");
             // Butler Lampson
 
-    private static final String REGEXP = "\\W+"; // for splitting into words
+    /** Regexp for splitting words */
+    private static final String REGEXP = "\\W+";
 
     private BufferedReader reader;
 
