@@ -1,12 +1,16 @@
-package solutions;
+package exercises;
 
 /*
  * HOL3970 - Lambda Programming Lab
  * JavaOne San Francisco 2013
+ *
+ * For each exercise, develop a solution using Java SE 8 Lambda/Streams
+ * and remove the @Ignore tag and run the tests.
  */
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.BufferedReader;
@@ -14,32 +18,30 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.*;
-import java.util.function.Function;
-import java.util.stream.Stream;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 
-import static java.util.stream.Collectors.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 
-public class LambdaExercises {
+public class LambdaExercisesTest {
 
-// Exercise 1: Print out all the words in WORD, which is
+// Exercise 1: Print out all the words in wordList, which is
 // a static List<String> defined at the bottom of this file.
 
-    @Test
+    @Test @Ignore
     public void printAllWords() {
-    	WORDS.forEach(System.out::println);
+
+    	/* TODO */
     }
 
-// Exercise 2: Convert all words in WORD to upper case,
+// Exercise 2: Convert all words in wordList to upper case,
 // and gather the result into an output list.
 
-    @Test
+    @Test @Ignore
     public void upperCaseWords() {
-        List<String> output = WORDS.stream()
-        		.map(String::toUpperCase)
-        		.collect(toList());
+        List<String> output = null; /* TODO */
 
         assertEquals(
             Arrays.asList(
@@ -49,14 +51,12 @@ public class LambdaExercises {
             output);
     }
 
-// Exercise 3: Find all the words in WORD that have even length
+// Exercise 3: Find all the words in wordList that have even length
 // and put them into an output list.
 
-    @Test
+    @Test @Ignore
     public void findEvenLengthWords() {
-        List<String> output = WORDS.stream()
-        		.filter(w -> w.length() % 2 == 0)
-        		.collect(toList());
+        List<String> output = null; /* TODO */
 
         assertEquals(
             Arrays.asList(
@@ -70,21 +70,18 @@ public class LambdaExercises {
 // The text file is "SonnetI.txt" (Shakespeare's first sonnet) which is
 // located at the root of this NetBeans project.
 
-    @Test
-    public void countLinesInFile() {
-        long count = reader.lines().count();
+    @Test @Ignore
+    public void countLinesInFile() throws IOException {
+        long count = 0L; /* TODO */
 
         assertEquals(14, count);
     }
 
 // Exercise 5: Join lines 3-4 from the text file into a single string.
 
-    @Test
-    public void joinLineRange() {
-        String output = reader.lines()
-        		.skip(2)
-        		.limit(2)
-        		.collect(joining());
+    @Test @Ignore
+    public void joinLineRange() throws IOException {
+        String output = null; /* TODO */
 
         assertEquals(
             "But as the riper should by time decease," +
@@ -94,12 +91,9 @@ public class LambdaExercises {
 
 // Exercise 6: Find the length of the longest line in the file.
 
-    @Test
-    public void lengthOfLongestLine() {
-        int longest = reader.lines()
-        		.mapToInt(String::length)
-        		.max()
-        		.getAsInt();
+    @Test @Ignore
+    public void lengthOfLongestLine() throws IOException {
+        int longest = 0; /* TODO */
 
         assertEquals(longest, 53);
     }
@@ -109,13 +103,9 @@ public class LambdaExercises {
 // Splitting this way results in "words" that are the empty string,
 // which should be discarded. REGEXP is defined at the bottom of this file.
 
-    @Test
-    public void listOfAllWords() {
-
-        List<String> output = reader.lines()
-        		.flatMap(line -> Stream.of(line.split(REGEXP)))
-        		.filter(word -> word.length() > 0)
-        		.collect(toList());
+    @Test @Ignore
+    public void listOfAllWords() throws IOException {
+        List<String> output = null; /* TODO */
 
         assertEquals(
             Arrays.asList(
@@ -139,14 +129,9 @@ public class LambdaExercises {
 
 // Exercise 8: Create a list containing the words, lowercased, in alphabetical order.
 
-    @Test
-    public void sortedLowerCase() {
-        List<String> output = reader.lines()
-        		.flatMap(line -> Stream.of(line.split(REGEXP)))
-        		.filter(word -> word.length() > 0)
-        		.map(String::toLowerCase)
-        		.sorted()
-        		.collect(toList());
+    @Test @Ignore
+    public void sortedLowerCase() throws IOException {
+        List<String> output = null; /* TODO */
 
         assertEquals(
             Arrays.asList(
@@ -172,16 +157,9 @@ public class LambdaExercises {
 // Exercise 9: Sort unique, lower-cased words by length, then alphabetically
 // within length, and place the result into an output list.
 
-    @Test
-    public void sortedLowerCaseDistinctByLengthThenAlphabetically() {
-
-        List<String> output = reader.lines()
-        		.flatMap(s -> Stream.of(s.split(REGEXP)))
-        		.filter(word -> word.length() > 0)
-        		.map(String::toLowerCase)
-        		.distinct()
-        		.sorted(Comparator.comparingInt(String::length).thenComparing(Comparator.naturalOrder()))
-        		.collect(toList());
+    @Test @Ignore
+    public void sortedLowerCaseDistinctByLengthThenAlphabetically() throws IOException {
+        List<String> output = null; /* TODO */
 
         assertEquals(
             Arrays.asList(
@@ -206,18 +184,15 @@ public class LambdaExercises {
 // list of words of that length. Don't bother with uniqueness or lower-
 // casing the words.
 
-    @Test
-    public void mapLengthToWord() {
-        Map<Integer, List<String>> map = reader.lines()
-        		.flatMap(line -> Stream.of(line.split(REGEXP)))
-        		.filter(word -> word.length() > 0)
-        		.collect(groupingBy(String::length));
+    @Test @Ignore
+    public void mapLengthToWordList() throws IOException {
+        Map<Integer, List<String>> map = null; /* TODO */
 
         assertEquals(6, map.get(7).size());
         assertEquals(Arrays.asList("increase", "ornament"), map.get(8));
         assertEquals(Arrays.asList("creatures", "abundance"), map.get(9));
         assertEquals(Arrays.asList("contracted", "niggarding"), map.get(10));
-        assertEquals(Collections.singletonList("substantial"), map.get(11));
+        assertEquals(Arrays.asList("substantial"), map.get(11));
         assertFalse(map.containsKey(12));
     }
 
@@ -226,28 +201,11 @@ public class LambdaExercises {
 // lower case. Extra challenge: implement two solutions, one that uses
 // groupingBy() and the other that uses toMap().
 
-    @Test
-    public void wordFrequencies() {
-        Map<String, Long> map = reader.lines()
-			.flatMap(line -> Stream.of(line.split(REGEXP)))
-			.collect(groupingBy(Function.identity(), counting()));
+    @Test @Ignore
+    public void wordFrequencies() throws IOException {
+        Map<String, Long> map = null; /* TODO */
 
         assertEquals(2L, (long)map.get("tender"));
-        assertEquals(6L, (long)map.get("the"));
-        assertEquals(1L, (long)map.get("churl"));
-        assertEquals(2L, (long)map.get("thine"));
-        assertEquals(3L, (long)map.get("world"));
-        assertFalse(map.containsKey("lambda"));
-    }
-
-    @Test
-    public void wordFrequenciesAlternate() {
-        Map<String, Long> map = reader.lines()
-    			.flatMap(line -> Stream.of(line.split(REGEXP)))
-    			.filter(word -> word.length() > 0)
-    			.collect(toMap(Function.identity(), w -> 1L, Long::sum));
-
-    	assertEquals(2L, (long)map.get("tender"));
         assertEquals(6L, (long)map.get("the"));
         assertEquals(1L, (long)map.get("churl"));
         assertEquals(2L, (long)map.get("thine"));
@@ -265,23 +223,9 @@ public class LambdaExercises {
 // representation of the result would be:
 //     {f={3=[foo]}, b={3=[bar, baz], 4=[bazz]}}.
 
-    @Test
-    public void nestedMaps() {
-        /*
-        Map<String, Map<Integer, List<String>>> map = reader.lines()
-		        .flatMap(line -> Stream.of(line.split(REGEXP)))
-		        .filter(word -> word.length() > 0)
-		        .collect(groupingBy(
-                        word -> String.valueOf(word.charAt(0)),
-                        HashMap::new,
-                        groupingBy(String::length, mapping(Function.identity(), toList()))));
-        */
-
-        Map<String, Map<Integer, List<String>>> map = reader.lines()
-                  .flatMap(line -> Stream.of(line.split(REGEXP)))
-                  .filter(word -> word.length() > 0)
-                  .collect(groupingBy(word -> word.substring(0,1),
-                                      groupingBy(String::length)));
+    @Test @Ignore
+    public void nestedMaps() throws IOException {
+        Map<String, Map<Integer, List<String>>> map = null; /* TODO */
 
         assertEquals("[From, Feed]", map.get("F").get(4).toString());
         assertEquals("[by, be, by]", map.get("b").get(2).toString());
@@ -292,14 +236,13 @@ public class LambdaExercises {
 
 // ===== TEST INFRASTRUCTURE ==================================================
 
-    private static final List<String> WORDS = Arrays.asList(
+    static List<String> wordList = Arrays.asList(
         "every", "problem", "in", "computer", "science",
         "can", "be", "solved", "by", "adding", "another",
         "level", "of", "indirection");
             // Butler Lampson
 
-    /** Regexp for splitting words */
-    private static final String REGEXP = "\\W+";
+    static final String REGEXP = "\\W+"; // for splitting into words
 
     private BufferedReader reader;
 

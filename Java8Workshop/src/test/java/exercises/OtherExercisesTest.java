@@ -17,7 +17,7 @@ import java.util.stream.LongStream;
  * and remove the @Ignore tag and run the tests.
  */
 
-public class OtherExercises {
+public class OtherExercisesTest {
 
     private Collection<Student> students;
 
@@ -97,7 +97,7 @@ public class OtherExercises {
     // Create an infinite stream matching the Fibonacci suite.
     // Extract the 10 first values of that streams.
     // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34
-    @Test
+    @Test @Ignore
     public void fibonacci() {
         LongStream fibs = null;
 
