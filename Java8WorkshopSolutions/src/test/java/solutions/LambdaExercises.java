@@ -210,7 +210,7 @@ public class LambdaExercises {
 // casing the words.
 
     @Test
-    public void mapLengthToWORD() {
+    public void mapLengthToWord() {
         Map<Integer, List<String>> map = reader.lines()
         		.flatMap(line -> Stream.of(line.split(REGEXP)))
         		.filter(word -> word.length() > 0)
