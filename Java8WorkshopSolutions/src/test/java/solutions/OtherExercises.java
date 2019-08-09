@@ -98,7 +98,7 @@ public class OtherExercises {
     public void multOneToTen() {
         int mult = IntStream.rangeClosed(1, 10).reduce(1, (a, b) -> a * b);
 
-        Assert.assertEquals(1*2*3*4*5*6*7*8*9*10, mult);
+        Assert.assertEquals(2 * 3 * 4 * 5 * 6 * 7 * 8 * 9 * 10, mult);
     }
 
     // Create an infinite stream matching the Fibonacci suite.
