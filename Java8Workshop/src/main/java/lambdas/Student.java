@@ -1,12 +1,12 @@
 package lambdas;
 
-public class Student {
+public final class Student {
 
-    private String name;
-    private int gradYear;
-    private int score;
+    private final String name;
+    private final int gradYear;
+    private final int score;
 
-    public Student(String name, int gradYear, int score) {
+    public Student(final String name, final int gradYear, final int score) {
         this.name = name;
         this.gradYear = gradYear;
         this.score = score;
