@@ -248,7 +248,7 @@ public class LambdaExercises {
         Map<String, Long> map = reader.lines()
     			.flatMap(line -> Stream.of(line.split(REGEXP)))
     			.filter(word -> word.length() > 0)
-    			.collect(toMap(Function.identity(), w -> 1l, Long::sum));
+    			.collect(toMap(Function.identity(), w -> 1L, Long::sum));
 
     	assertEquals(2L, (long)map.get("tender"));
         assertEquals(6L, (long)map.get("the"));
