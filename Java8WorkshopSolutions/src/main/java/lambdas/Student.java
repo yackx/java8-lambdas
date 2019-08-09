@@ -3,12 +3,12 @@ package lambdas;
 public final class Student {
 
     private final String name;
-    private final int gradYear;
+    private final int graduationYear;
     private final int score;
 
-    public Student(final String name, final int gradYear, final int score) {
+    public Student(final String name, final int graduationYear, final int score) {
         this.name = name;
-        this.gradYear = gradYear;
+        this.graduationYear = graduationYear;
         this.score = score;
     }
 
@@ -16,8 +16,8 @@ public final class Student {
         return name;
     }
 
-    public int getGradYear() {
-        return gradYear;
+    public int getGraduationYear() {
+        return graduationYear;
     }
 
     public int getScore() {

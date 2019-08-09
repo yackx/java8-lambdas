@@ -42,7 +42,7 @@ public class OtherExercises {
     @Test
     public void studentsByYear() {
         Map<Integer, List<Student>> map = students.stream()
-                .collect(groupingBy(Student::getGradYear));
+                .collect(groupingBy(Student::getGraduationYear));
 
         Assert.assertEquals(3, map.size());
         Assert.assertEquals(4, map.get(2014).size());
