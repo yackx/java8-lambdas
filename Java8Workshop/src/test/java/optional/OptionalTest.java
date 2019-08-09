@@ -1,8 +1,5 @@
-package be.waveit.java8.optional;
+package optional;
 
-import be.waveit.java8.Computer;
-import be.waveit.java8.Soundcard;
-import be.waveit.java8.Usb;
 import org.junit.Assert;
 import org.junit.Test;
 

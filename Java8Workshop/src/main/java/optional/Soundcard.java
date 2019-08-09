@@ -1,4 +1,4 @@
-package be.waveit.java8;
+package optional;
 
 import java.util.Optional;
 
