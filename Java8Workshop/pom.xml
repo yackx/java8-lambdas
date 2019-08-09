@@ -7,11 +7,11 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Java8Workshop</name>
 	<url>http://maven.apache.org</url>
-	
+
 	<properties>
 		<maven-compiler-plugin.version>3.2</maven-compiler-plugin.version>
 	</properties>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -25,9 +25,8 @@
 			<version>1.9.0</version>
 			<scope>test</scope>
 		</dependency>
-		
-		
 	</dependencies>
+
 	<build>
 		<pluginManagement>
 			<plugins>
@@ -46,4 +45,5 @@
 			</plugins>
 		</pluginManagement>
 	</build>
+
 </project>
