@@ -3,7 +3,6 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>be.wavit.examples</groupId>
 	<artifactId>Java8Workshop</artifactId>
-	<packaging>jar</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Java8Workshop</name>
 	<url>http://maven.apache.org</url>

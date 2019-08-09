@@ -3,7 +3,6 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>be.wavit.examples</groupId>
 	<artifactId>Java7NewFeatures</artifactId>
-	<packaging>jar</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Java7NewFeatures</name>
 	<url>http://maven.apache.org</url>
