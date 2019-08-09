@@ -27,20 +27,20 @@ import static org.junit.Assert.assertFalse;
 
 public class LambdaExercises {
 
-// Exercise 1: Print out all the words in wordList, which is
+// Exercise 1: Print out all the words in WORD, which is
 // a static List<String> defined at the bottom of this file.
 
     @Test
     public void printAllWords() {
-    	wordList.forEach(System.out::println);
+    	WORDS.forEach(System.out::println);
     }
 
-// Exercise 2: Convert all words in wordList to upper case,
+// Exercise 2: Convert all words in WORD to upper case,
 // and gather the result into an output list.
 
     @Test
     public void upperCaseWords() {
-        List<String> output = wordList.stream()
+        List<String> output = WORDS.stream()
         		.map(String::toUpperCase)
         		.collect(toList());
 
@@ -52,12 +52,12 @@ public class LambdaExercises {
             output);
     }
 
-// Exercise 3: Find all the words in wordList that have even length
+// Exercise 3: Find all the words in WORD that have even length
 // and put them into an output list.
 
     @Test
     public void findEvenLengthWords() {
-        List<String> output = wordList.stream()
+        List<String> output = WORDS.stream()
         		.filter(w -> w.length() % 2 == 0)
         		.collect(toList());
 
@@ -210,7 +210,7 @@ public class LambdaExercises {
 // casing the words.
 
     @Test
-    public void mapLengthToWordList() {
+    public void mapLengthToWORD() {
         Map<Integer, List<String>> map = reader.lines()
         		.flatMap(line -> Stream.of(line.split(REGEXP)))
         		.filter(word -> word.length() > 0)
@@ -295,7 +295,7 @@ public class LambdaExercises {
 
 // ===== TEST INFRASTRUCTURE ==================================================
 
-    private static final List<String> wordList = Arrays.asList(
+    private static final List<String> WORDS = Arrays.asList(
         "every", "problem", "in", "computer", "science",
         "can", "be", "solved", "by", "adding", "another",
         "level", "of", "indirection");
