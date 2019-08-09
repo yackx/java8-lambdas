@@ -11,6 +11,11 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
+/*
+ * For each exercise, develop a solution using Java SE 8 Lambda/Streams
+ * and remove the @Ignore tag. Then run the tests.
+ */
+
 public class OtherExercises {
 
     private Collection<Student> students;
@@ -29,12 +34,10 @@ public class OtherExercises {
         );
     }
 
+    // Group students by graduation years.
+    // Key is the year and value is the list of students of that year.
     @Test @Ignore
     public void studentsByYear() {
-        // Regroupez les étudiants par années de diplôme
-        // dans une map dont les clés sont les années et les valeurs,
-        // les listes d'étudiants correspondant à l'année.
-
         Map<Integer, List<Student>> map = null; // TODO
 
         Assert.assertEquals(3, map.size());
@@ -43,11 +46,10 @@ public class OtherExercises {
         Assert.assertEquals(1, map.get(2015).size());
     }
 
+    // Sort students by decreasing results.
+    // In case of identical result, sort alphabetically.
     @Test @Ignore
     public void studentsSorted() {
-        // Triez les étudiants par ordre de résultat décroissant.
-        // En cas d'ex-aequo, triez par ordre alphabétique
-
         List<Student> sorted = null; // TODO
 
         Assert.assertEquals(students.size(), sorted.size());
@@ -57,19 +59,17 @@ public class OtherExercises {
         Assert.assertEquals("S2014-11", sorted.get(7).getName());
     }
 
+    // Find one student that has obtained the highest score.
     @Test @Ignore
     public void findOneBest() {
-        // Retrouvez un étudiant qui a obtenu le meilleur score.
-
         Student best = null; // TODO
 
         Assert.assertEquals(18, best.getScore());
     }
 
+    // Concatenate the given strings.
     @Test @Ignore
     public void concatenate() {
-        // Concaténez les chaînes de caractères suivantes:
-
         List<String> strings = Arrays.asList("ABC", "DEF", "GHI");
 
         String word = null; // TODO
@@ -77,19 +77,17 @@ public class OtherExercises {
         Assert.assertEquals("ABCDEFGHI", word);
     }
 
+    // Sum up integer numbers from 1 to 10.
     @Test @Ignore
     public void addOneToTen() {
-        // Additionnez les nombres de 1 à 10.
-
         int sum = 0; // TODO
 
         Assert.assertEquals(1+2+3+4+5+6+7+8+9+10, sum);
     }
 
+    // Multiply integer numbers from 1 to 10.
     @Test @Ignore
     public void multOneToTen() {
-        // Multipliez les nombres de 1 à 10.
-
         int mult = 0; // TODO
 
         Assert.assertEquals(1*2*3*4*5*6*7*8*9*10, mult);

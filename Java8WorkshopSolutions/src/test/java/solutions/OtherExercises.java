@@ -37,12 +37,10 @@ public class OtherExercises {
         );
     }
 
+    // Group students by graduation years.
+    // Key is the year and value is the list of students of that year.
     @Test
     public void studentsByYear() {
-        // Regroupez les étudiants par années de diplôme
-        // dans une map dont les clés sont les années et les valeurs,
-        // les listes d'étudiants correspondant à l'année.
-
         Map<Integer, List<Student>> map = students.stream()
                 .collect(groupingBy(Student::getGradYear));
 
@@ -52,11 +50,10 @@ public class OtherExercises {
         Assert.assertEquals(1, map.get(2015).size());
     }
 
+    // Sort students by decreasing results.
+    // In case of identical result, sort alphabetically.
     @Test
     public void studentsSorted() {
-        // Triez les étudiants par ordre de résultat décroissant.
-        // En cas d'ex-aequo, triez par ordre alphabétique
-
         List<Student> sorted = students.stream()
                 .sorted(comparing(Student::getScore).reversed().thenComparing(Student::getName))
                 .collect(toList());
@@ -68,10 +65,9 @@ public class OtherExercises {
         Assert.assertEquals("S2014-11", sorted.get(7).getName());
     }
 
+    // Find one student that has obtained the highest score.
     @Test
     public void findOneBest() {
-        // Retrouvez un étudiant qui a obtenu le meilleur score.
-
         Student best = students.stream()
         		.max(comparingInt(Student::getScore))
         		.get();
@@ -79,10 +75,9 @@ public class OtherExercises {
         Assert.assertEquals(18, best.getScore());
     }
 
+    // Concatenate the given strings.
     @Test
     public void concatenate() {
-        // Concaténez les chaînes de caractères suivantes:
-
         List<String> strings = Arrays.asList("ABC", "DEF", "GHI");
 
         String word = strings.stream().collect(joining());
@@ -90,30 +85,27 @@ public class OtherExercises {
         Assert.assertEquals("ABCDEFGHI", word);
     }
 
+    // Sum up integer numbers from 1 to 10.
     @Test
     public void addOneToTen() {
-        // Additionnez les nombres de 1 à 10.
-
         int sum = IntStream.rangeClosed(1, 10).sum();
 
         Assert.assertEquals(1+2+3+4+5+6+7+8+9+10, sum);
     }
 
+    // Multiply integer numbers from 1 to 10.
     @Test
     public void multOneToTen() {
-        // Multipliez les nombres de 1 à 10.
-
         int mult = IntStream.rangeClosed(1, 10).reduce(1, (a, b) -> a * b);
 
         Assert.assertEquals(1*2*3*4*5*6*7*8*9*10, mult);
     }
 
+    // Create an infinite stream matching the Fibonacci suite.
+    // Extract the 10 first values of that streams.
+    // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34
     @Test
     public void fibonacci() {
-        // Créez un stream infini conforme à la suite de Fibonacci
-        // dont vous allez extraire les dix premières valeurs
-        // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34...
-
         LongStream fibs = Stream.iterate(
                 new long[] {0, 1, 1},
                 f -> new long[] {f[1], f[0] + f[1]}
