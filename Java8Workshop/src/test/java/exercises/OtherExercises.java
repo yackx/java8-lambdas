@@ -10,6 +10,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.LongStream;
 
 /*
  * For each exercise, develop a solution using Java SE 8 Lambda/Streams
@@ -93,4 +94,21 @@ public class OtherExercises {
         Assert.assertEquals(1*2*3*4*5*6*7*8*9*10, mult);
     }
 
+    // Create an infinite stream matching the Fibonacci suite.
+    // Extract the 10 first values of that streams.
+    // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34
+    @Test
+    public void fibonacci() {
+        LongStream fibs = null;
+
+        List<Long> f = null;
+
+        Assert.assertEquals(0L, (long)f.get(0));
+        Assert.assertEquals(1L, (long)f.get(1));
+        Assert.assertEquals(1L, (long)f.get(2));
+        Assert.assertEquals(2L, (long)f.get(3));
+        Assert.assertEquals(13L, (long)f.get(7));
+        Assert.assertEquals(21L, (long)f.get(8));
+        Assert.assertEquals(34L, (long) f.get(9));
+    }
 }
