@@ -295,13 +295,13 @@ public class LambdaExercises {
 
 // ===== TEST INFRASTRUCTURE ==================================================
 
-    static List<String> wordList = Arrays.asList(
+    private static final List<String> wordList = Arrays.asList(
         "every", "problem", "in", "computer", "science",
         "can", "be", "solved", "by", "adding", "another",
         "level", "of", "indirection");
             // Butler Lampson
 
-    static final String REGEXP = "\\W+"; // for splitting into words
+    private static final String REGEXP = "\\W+"; // for splitting into words
 
     private BufferedReader reader;
 
