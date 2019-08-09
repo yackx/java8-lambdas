@@ -32,7 +32,6 @@ public class LambdaExercises {
 
     @Test
     public void printAllWords() {
-
     	wordList.forEach(System.out::println);
     }
 
