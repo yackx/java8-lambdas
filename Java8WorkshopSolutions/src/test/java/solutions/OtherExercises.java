@@ -16,7 +16,6 @@ import java.util.stream.Stream;
 import static java.util.Comparator.comparing;
 import static java.util.Comparator.comparingInt;
 import static java.util.stream.Collectors.groupingBy;
-import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 
 public class OtherExercises {
@@ -80,7 +79,8 @@ public class OtherExercises {
     public void concatenate() {
         List<String> strings = Arrays.asList("ABC", "DEF", "GHI");
 
-        String word = strings.stream().collect(joining());
+        // String word = strings.stream().collect(joining());
+        String word = String.join("", strings);
 
         Assert.assertEquals("ABCDEFGHI", word);
     }
