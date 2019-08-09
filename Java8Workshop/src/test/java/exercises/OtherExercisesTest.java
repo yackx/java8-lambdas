@@ -88,10 +88,10 @@ public class OtherExercisesTest {
 
     // Multiply integer numbers from 1 to 10.
     @Test @Ignore
-    public void multOneToTen() {
-        int mult = 0; // TODO
+    public void multiplyOneToTen() {
+        int product = 0; // TODO
 
-        Assert.assertEquals(2 * 3 * 4 * 5 * 6 * 7 * 8 * 9 * 10, mult);
+        Assert.assertEquals(2 * 3 * 4 * 5 * 6 * 7 * 8 * 9 * 10, product);
     }
 
     // Create an infinite stream matching the Fibonacci suite.

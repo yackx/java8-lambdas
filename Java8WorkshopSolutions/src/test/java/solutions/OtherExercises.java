@@ -95,10 +95,10 @@ public class OtherExercises {
 
     // Multiply integer numbers from 1 to 10.
     @Test
-    public void multOneToTen() {
-        int mult = IntStream.rangeClosed(1, 10).reduce(1, (a, b) -> a * b);
+    public void multiplyOneToTen() {
+        int product = IntStream.rangeClosed(1, 10).reduce(1, (a, b) -> a * b);
 
-        Assert.assertEquals(2 * 3 * 4 * 5 * 6 * 7 * 8 * 9 * 10, mult);
+        Assert.assertEquals(2 * 3 * 4 * 5 * 6 * 7 * 8 * 9 * 10, product);
     }
 
     // Create an infinite stream matching the Fibonacci suite.
