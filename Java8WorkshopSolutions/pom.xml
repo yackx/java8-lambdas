@@ -5,7 +5,7 @@
     <artifactId>Java8WorkshopSolutions</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Java8WorkshopSolutions</name>
-    <url>http://maven.apache.org</url>
+    <url>https://github.com/yackx/Java8-Migration</url>
 
     <properties>
         <maven-compiler-plugin.version>3.2</maven-compiler-plugin.version>

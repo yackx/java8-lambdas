@@ -5,12 +5,12 @@
 	<artifactId>Java7NewFeatures</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Java7NewFeatures</name>
-	<url>http://maven.apache.org</url>
-	
+	<url>https://github.com/yackx/Java8-Migration</url>
+
 	<properties>
 		<maven-compiler-plugin.version>3.2</maven-compiler-plugin.version>
 	</properties>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -24,8 +24,8 @@
 			<version>1.9.0</version>
 			<scope>test</scope>
 		</dependency>
-		
-		
+
+
 	</dependencies>
 	<build>
 		<pluginManagement>
