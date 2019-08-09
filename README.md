@@ -4,7 +4,7 @@
 
 ## Content
 
-- Some material is from a "Night Hacking" with Brian Goetz.
+- Main material is from a "Night Hacking" with Brian Goetz.
 - Extra exercises covering techniques that were not part of the original lab.
 - Java 7 features are demonstrated in a separate subfolder.
 
