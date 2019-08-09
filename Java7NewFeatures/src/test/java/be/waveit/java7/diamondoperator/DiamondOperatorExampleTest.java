@@ -1,27 +1,24 @@
 package be.waveit.java7.diamondoperator;
 
+import org.junit.Test;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.junit.Test;
-
 public class DiamondOperatorExampleTest {
-	
+
 	@Test
-	public void test_java6Example(){
+	public void testJava6(){
 		Map<String, List<Node>> trades = new HashMap<String, List<Node>> ();
-		System.out.println(trades.size());
-	}
-	
-	@Test
-	public void test_java7Example(){
-		Map<String, List<Node>> trades = new HashMap<> ();
-		System.out.println(trades.size());
-	}
-	
-	private class Node {
-		
 	}
 
+	@Test
+	public void testJava7Diamond(){
+		Map<String, List<Node>> trades = new HashMap<> ();
+	}
+
+	private class Node {
+		// empty
+	}
 }

@@ -10,81 +10,67 @@ import java.util.List;
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.RecursiveTask;
 
-public class ForkJoinExample {
-	
-	public static long execute(String path){
+class ForkJoinExample {
+	static long execute(String path){
 		int processors = Runtime.getRuntime().availableProcessors();
-        System.out.println(Integer.toString(processors) + " processor"
+        System.out.println(processors + " processor"
                 + (processors != 1 ? "s are " : " is ")
                 + "available");
-        
+
         DirectorySizeTask task = new DirectorySizeTask(Paths.get(path));
-        
         ForkJoinPool pool = new ForkJoinPool();
         return pool.invoke(task);
 	}
-
-
 }
 
 class DirectorySizeTask extends RecursiveTask<Long>{
-	
 	private static final long serialVersionUID = -5035850745336856440L;
 	private Path rootPath;
-	
-	public DirectorySizeTask(Path rootPath) {
+
+	DirectorySizeTask(Path rootPath) {
 		super();
 		this.rootPath = rootPath;
 	}
 
-
-
 	@Override
 	protected Long compute() {
-		Long size = 0l;
-		
-		List<Path> fileList = new ArrayList<>();
-		List<Path> directoryList = new ArrayList<>();
-		
-			
-		    try (DirectoryStream<Path> stream = Files.newDirectoryStream(rootPath)) {
-		        for (Path entry : stream) {
-		            if (Files.isDirectory(entry)) {
-		            	directoryList.add(entry);
-		            }else{
-		            	fileList.add(entry);
-		            }
-		            
-		        }
-		    } catch (IOException e) {
-				e.printStackTrace();
+		Long size = 0L;
+		List<Path> files = new ArrayList<>();
+		List<Path> directories = new ArrayList<>();
+
+		try (DirectoryStream<Path> stream = Files.newDirectoryStream(rootPath)) {
+			for (Path entry : stream) {
+				if (Files.isDirectory(entry)) {
+					directories.add(entry);
+				} else {
+					files.add(entry);
+				}
 			}
-		
-		size += computeFiles(fileList);
-		
-		List<DirectorySizeTask> subtasks = createSubTasks(directoryList);
-		
-		invokeAll(subtasks);
-		
-		for (DirectorySizeTask task : subtasks){
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		size += computeFiles(files);
+
+		List<DirectorySizeTask> subTasks = createSubTasks(directories);
+
+		invokeAll(subTasks);
+
+		for (DirectorySizeTask task : subTasks){
 			size += task.join();
 		}
-		
-		
+
 //		System.out.println(Thread.currentThread().getName() + " - Treating directory : " + rootPath + " - size = " + size + " bytes.");
 		return size;
 	}
 
-
-
-	private List<DirectorySizeTask> createSubTasks(List<Path> directoryList){
+	private List<DirectorySizeTask> createSubTasks(List<Path> directories){
 		List<DirectorySizeTask> tasks = new ArrayList<>();
-		for (Path path: directoryList){
+		for (Path path : directories) {
 			tasks.add(new DirectorySizeTask(path));
 		}
 		return tasks;
 	}
-
 
 	private Long computeFiles(List<Path> fileList) {
 		long size = 0;
@@ -97,5 +83,4 @@ class DirectorySizeTask extends RecursiveTask<Long>{
 		}
 		return size;
 	}
-	
 }

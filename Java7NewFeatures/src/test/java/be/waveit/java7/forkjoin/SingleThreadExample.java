@@ -6,14 +6,12 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public class SingleThreadExample {
+class SingleThreadExample {
 
-	
-	public static long execute(String path){
+	static long execute(String path){
 			return computeSize(Paths.get(path));
 	}
-	
-	
+
 	private static long computeSize(Path path) {
 		long size = 0;
 	    try (DirectoryStream<Path> stream = Files.newDirectoryStream(path)) {
@@ -24,7 +22,7 @@ public class SingleThreadExample {
 	            else {
 	            	size += Files.size(entry);
 	            }
-	            
+
 	        }
 	    } catch (IOException e) {
 			e.printStackTrace();

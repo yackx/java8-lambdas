@@ -1,14 +1,14 @@
 package be.waveit.java7.errorhandling;
 
+import org.junit.Test;
+
 import java.io.IOException;
 import java.sql.SQLException;
-
-import org.junit.Test;
 
 public class MultiCatchExampleTest {
 
 	@Test
-	public void test_multipleExceptionsJava6(){
+	public void testCatchMultipleExceptionsJava6(){
 		try {
 			generateExceptions();
 		} catch (IOException e) {
@@ -17,18 +17,17 @@ public class MultiCatchExampleTest {
 			e.printStackTrace();
 		}
 	}
-	
+
 	@Test
-	public void test_multipleExceptionsJava7(){
+	public void testCatchMultipleExceptionsJava7(){
 		try {
 			generateExceptions();
 		} catch (IOException | SQLException e) {
 			e.printStackTrace();
 		}
 	}
-	
-	private void generateExceptions() throws IOException, SQLException{
+
+	private void generateExceptions() throws IOException, SQLException {
 		throw new IOException();
 	}
-	
 }
