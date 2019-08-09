@@ -74,7 +74,7 @@ public class LambdaExercises {
 // located at the root of this NetBeans project.
 
     @Test
-    public void countLinesInFile() throws IOException {
+    public void countLinesInFile() {
         long count = reader.lines().count();
 
         assertEquals(14, count);
@@ -83,7 +83,7 @@ public class LambdaExercises {
 // Exercise 5: Join lines 3-4 from the text file into a single string.
 
     @Test
-    public void joinLineRange() throws IOException {
+    public void joinLineRange() {
         String output = reader.lines()
         		.skip(2)
         		.limit(2)
@@ -98,7 +98,7 @@ public class LambdaExercises {
 // Exercise 6: Find the length of the longest line in the file.
 
     @Test
-    public void lengthOfLongestLine() throws IOException {
+    public void lengthOfLongestLine() {
         int longest = reader.lines()
         		.mapToInt(String::length)
         		.max()
@@ -113,7 +113,7 @@ public class LambdaExercises {
 // which should be discarded. REGEXP is defined at the bottom of this file.
 
     @Test
-    public void listOfAllWords() throws IOException {
+    public void listOfAllWords() {
 
         List<String> output = reader.lines()
         		.flatMap(line -> Stream.of(line.split(REGEXP)))
@@ -143,7 +143,7 @@ public class LambdaExercises {
 // Exercise 8: Create a list containing the words, lowercased, in alphabetical order.
 
     @Test
-    public void sortedLowerCase() throws IOException {
+    public void sortedLowerCase() {
         List<String> output = reader.lines()
         		.flatMap(line -> Stream.of(line.split(REGEXP)))
         		.filter(word -> word.length() > 0)
@@ -176,7 +176,7 @@ public class LambdaExercises {
 // within length, and place the result into an output list.
 
     @Test
-    public void sortedLowerCaseDistinctByLengthThenAlphabetically() throws IOException {
+    public void sortedLowerCaseDistinctByLengthThenAlphabetically() {
 
         List<String> output = reader.lines()
         		.flatMap(s -> Stream.of(s.split(REGEXP)))
@@ -210,7 +210,7 @@ public class LambdaExercises {
 // casing the words.
 
     @Test
-    public void mapLengthToWordList() throws IOException {
+    public void mapLengthToWordList() {
         Map<Integer, List<String>> map = reader.lines()
         		.flatMap(line -> Stream.of(line.split(REGEXP)))
         		.filter(word -> word.length() > 0)
@@ -230,7 +230,7 @@ public class LambdaExercises {
 // groupingBy() and the other that uses toMap().
 
     @Test
-    public void wordFrequencies() throws IOException {
+    public void wordFrequencies() {
         Map<String, Long> map = reader.lines()
 			.flatMap(line -> Stream.of(line.split(REGEXP)))
 			.collect(groupingBy(Function.identity(), counting()));
@@ -244,7 +244,7 @@ public class LambdaExercises {
     }
 
     @Test
-    public void wordFrequenciesAlternate() throws IOException {
+    public void wordFrequenciesAlternate() {
         Map<String, Long> map = reader.lines()
     			.flatMap(line -> Stream.of(line.split(REGEXP)))
     			.filter(word -> word.length() > 0)
@@ -269,7 +269,7 @@ public class LambdaExercises {
 //     {f={3=[foo]}, b={3=[bar, baz], 4=[bazz]}}.
 
     @Test
-    public void nestedMaps() throws IOException {
+    public void nestedMaps() {
         /*
         Map<String, Map<Integer, List<String>>> map = reader.lines()
 		        .flatMap(line -> Stream.of(line.split(REGEXP)))
