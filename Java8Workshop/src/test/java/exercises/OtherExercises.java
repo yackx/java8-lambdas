@@ -13,7 +13,7 @@ import java.util.Map;
 
 /*
  * For each exercise, develop a solution using Java SE 8 Lambda/Streams
- * and remove the @Ignore tag. Then run the tests.
+ * and remove the @Ignore tag and run the tests.
  */
 
 public class OtherExercises {

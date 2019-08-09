@@ -3,9 +3,6 @@ package solutions;
 /*
  * HOL3970 - Lambda Programming Lab
  * JavaOne San Francisco 2013
- *
- * For each exercise, develop a solution using Java SE 8 Lambda/Streams
- * and remove the @Ignore tag. Then run the tests.
  */
 
 import org.junit.After;
