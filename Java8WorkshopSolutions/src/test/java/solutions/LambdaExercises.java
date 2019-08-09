@@ -220,7 +220,7 @@ public class LambdaExercises {
         assertEquals(Arrays.asList("increase", "ornament"), map.get(8));
         assertEquals(Arrays.asList("creatures", "abundance"), map.get(9));
         assertEquals(Arrays.asList("contracted", "niggarding"), map.get(10));
-        assertEquals(Arrays.asList("substantial"), map.get(11));
+        assertEquals(Collections.singletonList("substantial"), map.get(11));
         assertFalse(map.containsKey(12));
     }
 
