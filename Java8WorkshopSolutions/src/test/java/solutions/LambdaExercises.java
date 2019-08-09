@@ -5,7 +5,7 @@ package solutions;
  * JavaOne San Francisco 2013
  *
  * For each exercise, develop a solution using Java SE 8 Lambda/Streams
- * and remove the @Ignore tag. Then run the tests using Alt-F6.
+ * and remove the @Ignore tag. Then run the tests.
  */
 
 import org.junit.After;
